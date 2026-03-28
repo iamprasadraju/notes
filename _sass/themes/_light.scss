@@ -1,0 +1,149 @@
+// Light Theme Overrides - Original Obsidian
+[data-theme="light"] {
+  --bg1: #ffffff;
+  --bg2: #f5f5f5;
+  --bg3: #ebebeb;
+
+  --ui1: #d0d7de;
+  --ui2: #afb8c1;
+  --ui3: #8b949e;
+
+  --tx1: #1f2328;
+  --tx2: #57606a;
+  --tx3: #8b949e;
+  --tx4: #6639ba;
+
+  --ax1: #7c3aed;
+  --ax2: #6d28d9;
+  --ax3: #8b5cf6;
+
+  --hl1: rgba(124, 58, 237, 0.1);
+  --hl2: rgba(255, 225, 0, 0.5);
+
+  --sp1: white;
+
+  --mono100: black;
+  --mono0: white;
+
+  --interactive-normal: var(--bg1);
+  --interactive-accent-rgb: 220, 220, 220;
+
+  --active-line-bg: rgba(0, 0, 0, 0.035);
+  --background-modifier-cover: hsla(0, 0%, 0%, 0.5);
+
+  --background-modifier-error: rgba(255, 0, 0, 0.14);
+  --background-modifier-error-hover: rgba(255, 0, 0, 0.08);
+
+  --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
+
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --btn-shadow-color: rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+
+  --bg-code: #f0f0f0;
+  --inline-code-bg: #e8e8e8;
+  --code-bg: #fafafa;
+  --code-header-bg: #fafafa;
+  --code-border: #e0e0e0;
+
+  --tag-bg: rgba(124, 58, 237, 0.1);
+  --tag-text: #6d28d9;
+  --tag-hover-bg: rgba(124, 58, 237, 0.18);
+
+  --scrollbar-track: transparent;
+  --scrollbar-thumb: rgba(0, 0, 0, 0.15);
+  --scrollbar-thumb-hover: rgba(0, 0, 0, 0.25);
+
+  --callout-note: #0969da;
+  --callout-note-bg: rgba(9, 105, 218, 0.05);
+  --callout-tip: #1a7f37;
+  --callout-tip-bg: rgba(26, 127, 55, 0.05);
+  --callout-info: #0969da;
+  --callout-info-bg: rgba(9, 105, 218, 0.05);
+  --callout-warning: #9a6700;
+  --callout-warning-bg: rgba(154, 103, 0, 0.05);
+  --callout-danger: #cf222e;
+  --callout-danger-bg: rgba(207, 34, 46, 0.05);
+  --callout-example: #8250df;
+  --callout-example-bg: rgba(130, 80, 223, 0.05);
+  --callout-quote: #57606a;
+  --callout-quote-bg: rgba(87, 96, 106, 0.05);
+
+  --accent: var(--ax1);
+  --accent-hover: var(--ax2);
+  --accent-muted: rgba(124, 58, 237, 0.1);
+
+  --link: #0969da;
+  --link-hover: #0550ae;
+
+  --border: var(--ui1);
+  --border-hover: var(--ui2);
+  --border-active: var(--ax1);
+
+  --hover: var(--bg3);
+  --active: var(--bg3);
+
+  --text-selection: var(--hl1);
+
+  --cards-background: transparent;
+
+  // Vim Light code colors
+  --code-text: #000000;
+  --code-comment: #008000;
+  --code-keyword: #0000ff;
+  --code-string: #a31515;
+  --code-number: #098658;
+  --code-function: #795e26;
+  --code-variable: #001080;
+  --code-operator: #000000;
+  --code-constant: #0070c1;
+  --code-class: #267f99;
+}
+
+// Light theme semantic aliases
+[data-theme="light"] {
+  --background-primary: var(--bg1);
+  --background-primary-alt: var(--bg2);
+  --background-secondary: var(--bg2);
+  --background-secondary-alt: var(--bg1);
+  --background-tertiary: var(--bg3);
+  --background-modifier-border: var(--ui1);
+  --background-modifier-border-hover: var(--ui2);
+  --background-modifier-border-focus: var(--ui3);
+  --background-modifier-hover: var(--bg3);
+  --background-modifier-active-hover: var(--bg3);
+  --background-modifier-accent: var(--ax3);
+  --background-modifier-form-field: var(--bg1);
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.08);
+
+  --interactive-hover: var(--ui1);
+  --interactive-accent: var(--ax3);
+  --interactive-accent-hover: var(--ax1);
+
+  --quote-opening-modifier: var(--ui2);
+
+  --text-normal: var(--tx1);
+  --text-bold: var(--tx1);
+  --text-italic: var(--tx1);
+  --text-muted: var(--tx2);
+  --text-faint: var(--tx3);
+  --text-accent: var(--ax1);
+  --text-accent-hover: var(--ax2);
+  --text-on-accent: white;
+  --text-blockquote: var(--tx2);
+  --text-code: var(--tx4);
+  --text-error: var(--color-red);
+
+  --icon-color: var(--tx2);
+  --icon-color-hover: var(--tx2);
+  --icon-color-active: var(--tx1);
+  --icon-hex: black;
+
+  --title-color: var(--tx1);
+  --title-color-inactive: var(--tx2);
+
+  --modal-border: var(--ui2);
+}

@@ -1,0 +1,146 @@
+// Base element styles - Minimal Publish
+
+// Headings with anchor links
+.note-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+
+    .heading-anchor {
+      position: absolute;
+      left: -1.2em;
+      padding-right: 0.2em;
+      color: var(--text-faint);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--link);
+      }
+    }
+
+    &:hover .heading-anchor {
+      opacity: 1;
+    }
+  }
+}
+
+// Lists
+.note-content {
+  ul,
+  ol {
+    padding-left: var(--list-padding);
+    margin-bottom: var(--sp-4);
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li {
+    margin-bottom: var(--list-spacing);
+
+    & > ul,
+    & > ol {
+      margin-bottom: 0;
+      margin-top: var(--list-spacing);
+    }
+  }
+
+  // List markers
+  ul > li::marker {
+    color: var(--text-faint);
+  }
+
+  ol > li::marker {
+    color: var(--text-faint);
+  }
+
+  // Task lists
+  .task-list-item {
+    list-style: none;
+    margin-left: -1.5em;
+
+    input[type="checkbox"] {
+      margin-right: 0.5em;
+      accent-color: var(--accent);
+    }
+  }
+}
+
+// Images - Minimal Publish style
+.note-content {
+  img {
+    border-radius: var(--image-radius);
+  }
+
+  iframe {
+    border-radius: var(--image-radius);
+  }
+}
+
+// Horizontal rules
+.note-content {
+  hr {
+    border: none;
+    border-top: var(--border-width) solid var(--border);
+    margin: var(--sp-8) 0;
+  }
+}
+
+// Details/Summary (foldable)
+.note-content {
+  details {
+    border: var(--border-width) solid var(--border);
+    border-radius: var(--radius);
+    padding: var(--sp-3) var(--sp-4);
+    margin-bottom: var(--sp-4);
+    background: var(--background-secondary);
+
+    summary {
+      cursor: pointer;
+      font-weight: var(--bold-weight);
+      color: var(--text-normal);
+      user-select: none;
+
+      &:hover {
+        color: var(--link);
+      }
+    }
+
+    &[open] {
+      summary {
+        margin-bottom: var(--sp-3);
+      }
+    }
+  }
+}
+
+// Keyboard shortcuts
+kbd {
+  display: inline-block;
+  padding: 0.1em 0.4em;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  background: var(--background-tertiary);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+// External links - plain by default (no icon)
+.plain-external-links .external-link {
+  background-image: none;
+  padding-right: 0;
+}
