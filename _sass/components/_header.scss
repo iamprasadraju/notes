@@ -1,0 +1,211 @@
+// Header Bar
+
+.main-header {
+  display: flex;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  gap: var(--sp-2);
+  background: var(--background-primary);
+  z-index: 5;
+}
+
+// Hide entire desktop header on mobile (mobile has its own header)
+.main-header {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+// Sidebar toggle button: show X when open, hamburger when closed
+.sidebar-toggle-btn {
+  .icon-hamburger,
+  .icon-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+  }
+
+  // Default: sidebar open → show X
+  .icon-hamburger { display: none; }
+  .icon-close { display: flex; }
+
+  // Sidebar collapsed → show hamburger
+  .app-layout.sidebar-collapsed & {
+    .icon-hamburger { display: flex; }
+    .icon-close { display: none; }
+  }
+
+  // Hide on mobile (mobile-header has its own hamburger)
+  @media (max-width: 1024px) {
+    display: none !important;
+  }
+}
+
+// Header buttons
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+// Hide desktop header's buttons on mobile (mobile header has its own)
+.main-header .header-actions {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background: var(--hover);
+    color: var(--text-normal);
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+// Search trigger button in header
+.search-trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  background: var(--background-secondary);
+  border: var(--border-width) solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-faint);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  min-width: 200px;
+
+  &:hover {
+    border-color: var(--border-hover);
+    color: var(--text-muted);
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+
+  .search-shortcut {
+    margin-left: auto;
+    font-size: var(--font-size-xs);
+    color: var(--text-faint);
+  }
+
+  @media (max-width: 640px) {
+    min-width: auto;
+
+    .search-shortcut,
+    .search-placeholder {
+      display: none;
+    }
+  }
+}
+
+// Hide desktop header search on mobile (mobile header has its own)
+.main-header .breadcrumbs {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+}
+
+// Mobile header (hidden on desktop)
+.mobile-header {
+  display: none;
+  align-items: center;
+  height: var(--header-height);
+  padding: 0 var(--sp-3);
+  border-bottom: 1px solid var(--border);
+  background: var(--background-primary);
+  gap: var(--sp-2);
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    display: flex;
+  }
+
+  .header-actions {
+    flex-shrink: 0;
+    gap: 0;
+
+    .header-btn {
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    padding: 0 var(--sp-2);
+    gap: var(--sp-1);
+
+    .header-actions .header-btn {
+      width: 32px;
+      height: 32px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+
+  &:hover {
+    background: var(--hover);
+    color: var(--text-normal);
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+}
+
+// Right sidebar toggle in header — always visible on desktop
+.sidebar-right-toggle {
+  display: flex;
+}

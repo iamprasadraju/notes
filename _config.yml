@@ -1,0 +1,141 @@
+# Obsidian Theme for Jekyll
+# Minimal Publish inspired theme
+
+title: "My Vault"
+description: "A personal knowledge base"
+baseurl: "/jekyll-obsidian-theme"
+url: "https://iamprasadraju.github.io"
+
+permalink: pretty
+
+# Collections
+collections:
+  notes:
+    output: true
+    permalink: /:path/
+
+# Strip the collection name from paths
+# Jekyll's :path includes the collection directory, so we use a custom permalink
+# Notes at _notes/concepts/zettelkasten.md → /concepts/zettelkasten/
+
+defaults:
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+      toc: true
+      backlinks: true
+
+# Obsidian Theme Settings
+obsidian:
+  # Default color scheme: "dark" or "light"
+  color_scheme: dark
+  # Left sidebar
+  sidebar_left:
+    enabled: true
+    width: 260
+  # Right sidebar
+  sidebar_right:
+    enabled: true
+    width: 280
+  # Search
+  search:
+    enabled: true
+    shortcut: "k"
+  # Graph view (force-graph, Barnes-Hut O(n log n))
+  graph:
+    enabled: true
+    lazy_load: true
+    mini_graph: true
+    test_nodes: 0  # Set to >0 to add fake test nodes for graph performance testing
+    # Color groups for nodes (tag -> color mapping, like Obsidian)
+    color_groups:
+      concepts: "#7b68ee"
+      guide: "#4fc3f7"
+      project: "#ff7043"
+      daily: "#66bb6a"
+      setup: "#4fc3f7"
+      method: "#7b68ee"
+      knowledge-management: "#7b68ee"
+      jekyll: "#ff7043"
+      theme: "#ff7043"
+  # Slide overlay (Andy Matuschak style)
+  slides:
+    enabled: true
+    pane_width: 625
+    resizable: true
+  # Tags
+  tags:
+    enabled: true
+  # Code
+  code:
+    copy_button: true
+    syntax_highlight: true
+  # Callouts - Catppuccin Mocha colors
+  callouts:
+    note:
+      color: "#6c99bb"
+      icon: "info-circle"
+    tip:
+      color: "#a8c373"
+      icon: "lightbulb"
+    info:
+      color: "#6c99bb"
+      icon: "info"
+    warning:
+      color: "#e5b567"
+      icon: "exclamation-triangle"
+    danger:
+      color: "#d04255"
+      icon: "fire"
+    example:
+      color: "#9e86c8"
+      icon: "list-ol"
+    quote:
+      color: "#999999"
+      icon: "quote-left"
+  # Features (Minimal Publish helper classes)
+  features:
+    focus_mode: true
+    colorful_headings: true
+    image_grid: true
+    cards: true
+  # Vault sync
+  sync:
+    vault_path: ""  # Path to your Obsidian vault (e.g. "~/Documents/MyVault")
+    attachments_dir: "assets/attachments"
+    ignore: []      # Extra dirs/files to skip (beyond .obsidian, .trash, .git)
+    auto_frontmatter: true  # Auto-add title/date if missing
+    incremental: true       # Only sync changed files
+    orphan_cleanup: true    # Remove notes from _notes/ that no longer exist in vault
+
+  # Optional features
+  mermaid: false
+  mathjax: true
+
+# Markdown processing
+kramdown:
+  auto_ids: true
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Exclude from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - ".jekyll-cache"
+  - vendor
+
+# Include dotfiles
+include:
+  - _notes
